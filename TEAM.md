@@ -20,12 +20,12 @@ cd crewai
 
 Anota un responsable por archivo. El equipo tiene seis personas y cada una edita su propio agente.
 
-- `agents/architect.py`: responsable pendiente. Define la solución y el contrato de API.
-- `agents/backend.py`: responsable pendiente. Implementa el backend.
-- `agents/frontend.py`: responsable pendiente. Implementa el frontend.
-- `agents/testing.py`: responsable pendiente. Diseña las pruebas y sus comandos de ejecución.
-- `agents/security.py`: responsable pendiente. Revisa riesgos y propone correcciones verificables.
-- `agents/chapter.py`: responsable pendiente. Revisa todas las entregas y emite el veredicto final.
+- `agents/architect.py`: user-bcp-student23. Define la solución y el contrato de API.
+- `agents/backend.py`: user-bcp-student37. Implementa el backend.
+- `agents/frontend.py`: user-bcp-student21. Implementa el frontend.
+- `agents/testing.py`: user-bcp-student36. Diseña las pruebas y sus comandos de ejecución.
+- `agents/security.py`: user-bcp-student42. Revisa riesgos y propone correcciones verificables.
+- `agents/chapter.py`: user-bcp-student10. Revisa todas las entregas y emite el veredicto final.
 
 ## Registrar responsables para el dashboard
 

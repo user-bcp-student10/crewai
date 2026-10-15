@@ -293,11 +293,17 @@ def list_issues() -> list[dict]:
 
 # ── GitHub Projects (v2) — proyecto asignado + backlog ──────────────────────
 
+_PROJECT_ID = os.getenv("PROJECTS_PROJECT_ID", "")
+
+
 def list_projects() -> list[dict]:
     """Lista los GitHub Projects (v2) visibles para el MCP.
 
     Llama a manage_project (action "list") y normaliza la respuesta:
         [{"id": "PVT_...", "title": "...", "number": 1, "closed": False}, ...]
+
+    Si el MCP no lista proyectos (devuelve vacío), usa PROJECTS_PROJECT_ID
+    (node ID del proyecto, p. ej. PVT_...) y lo resuelve con action "get".
     """
     result = call_tool("manage_project", {"action": "list", "status": "all", "limit": 20})
     if isinstance(result, list):
@@ -305,11 +311,7 @@ def list_projects() -> list[dict]:
     else:
         raw = result.get("projects", result.get("items", []))
 
-    if not raw and _FALLBACK_PROJECT_ID:
-        # El MCP puede devolver [] en list aunque el proyecto exista; se resuelve por ID.
-        raw = [call_tool("manage_project", {"action": "get", "projectId": _FALLBACK_PROJECT_ID})]
-
-    return [
+    projects = [
         {
             "id":     p.get("id"),
             "title":  p.get("title", p.get("name", "(sin título)")),
@@ -318,6 +320,17 @@ def list_projects() -> list[dict]:
         }
         for p in raw
     ]
+
+    if not projects and _PROJECT_ID:
+        p = call_tool("manage_project", {"action": "get", "projectId": _PROJECT_ID})
+        projects = [{
+            "id":     p.get("id", _PROJECT_ID),
+            "title":  p.get("title", "(sin título)"),
+            "number": p.get("number"),
+            "closed": bool(p.get("closed", p.get("status") == "closed")),
+        }]
+
+    return projects
 
 
 def _normalize_project_item(it: dict) -> dict:
