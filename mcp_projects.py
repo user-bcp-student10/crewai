@@ -7,6 +7,7 @@ Variables de entorno:
     MCP_TIMEOUT                          Timeout en segundos (default: 30)
     GITHUB_OWNER                         Owner de GitHub (org o usuario)
     GITHUB_REPO                          Repo por defecto
+    PROJECTS_PROJECT_ID                  ID de Project v2 (PVT_...) usado si list_projects viene vacío
 """
 import os
 import re
@@ -199,6 +200,7 @@ def discover_tool_schema(group: str, action: str | None = None) -> dict:
 
 _OWNER = os.getenv("GITHUB_OWNER", "")
 _REPO  = os.getenv("GITHUB_REPO",  "")
+_FALLBACK_PROJECT_ID = os.getenv("PROJECTS_PROJECT_ID", "")
 
 
 def _extract_acceptance_criteria(body: str) -> list[str]:
@@ -302,6 +304,10 @@ def list_projects() -> list[dict]:
         raw = result
     else:
         raw = result.get("projects", result.get("items", []))
+
+    if not raw and _FALLBACK_PROJECT_ID:
+        # El MCP puede devolver [] en list aunque el proyecto exista; se resuelve por ID.
+        raw = [call_tool("manage_project", {"action": "get", "projectId": _FALLBACK_PROJECT_ID})]
 
     return [
         {
