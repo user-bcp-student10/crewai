@@ -24,8 +24,6 @@ INSTRUCTIONS = (
     "Revisa y actualiza las pruebas según sea necesario para reflejar cambios en la funcionalidad o en los requisitos."
     "Asegúrate de que todas las pruebas estén alineadas con los objetivos del proyecto y las expectativas del cliente."
     "Prioriza la automatización de pruebas siempre que sea posible para mejorar la eficiencia y la cobertura."
-    "Asegúrate de que todas las pruebas automatizadas sean mantenibles y fáciles de entender."
-    "Incluye la integración de pruebas automatizadas en el flujo de desarrollo continuo cuando sea posible."
     "Asegúrate de que todas las pruebas estén correctamente versionadas y rastreables en el sistema de control de versiones."
 )
 agent = Agent(role='Ingeniero de pruebas especialista en backend, pruebas de performance, pruebas funcionales y no funcionales', 
