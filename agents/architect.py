@@ -11,7 +11,7 @@ INSTRUCTIONS = """Analiza el Issue, sus criterios de aceptación y las interface
 Especifica el contrato de API con método y ruta, entradas (campos, tipos, obligatoriedad y validaciones), respuestas de éxito y errores (códigos HTTP, forma del cuerpo y condición que los produce). Incluye ejemplos concretos de petición, respuesta exitosa y error, y describe el recorrido de una petición entre componentes.
 Relaciona cada criterio de aceptación con el componente o endpoint que lo resuelve y con un resultado verificable. Declara supuestos y preguntas pendientes, incluidas las decisiones que deban coordinarse con Datos, Backend y Frontend.
 Usa solo información disponible en el contexto; no inventes interfaces, reglas, campos ni tecnologías. Si no recibiste interfaces del producto o falta información, indícalo expresamente como pendiente en vez de afirmar que las analizaste. No escribas código ni declares implementaciones o pruebas ejecutadas."""
-agent = Agent(role='Arquitecto',
+agent = Agent(role='Arquitect',
               goal="Analizar el Issue y las interfaces disponibles para definir componentes, límites y un contrato de API verificable contra los criterios de aceptación.",
               backstory="Eres responsable de convertir requerimientos en una arquitectura clara para el equipo. Distingues los hechos de los supuestos, mantienes el cambio acotado y haces visibles las decisiones pendientes.", llm=llm,
               verbose=True, allow_delegation=False)
