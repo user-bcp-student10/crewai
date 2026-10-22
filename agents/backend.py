@@ -13,9 +13,7 @@ Define acceso a datos y transacciones. En equipos de seis cubre también esquema
 Incluye un caso válido, un error y comandos para comprobarlos.
 Entrega backend_spec.md y código Java con el formato de extracción que ya exige build_task."""
 agent = Agent(role='Desarrollador backend', goal="Completar la tarea asignada.",
-              backstory="eres un backend con mas de 10 años de experiencia ne la creacion" \
-              " de microservicios con arquitectura hexagonal conocimientos en quarkus y" \
-              " buen manejo de protrones de diseño ", llm=llm,
+              backstory="Eres un desarrollador backend con más de 10 años de experiencia en la creación de microservicios, arquitectura hexagonal y Quarkus. Aplicas patrones de diseño de forma adecuada.", llm=llm,
               verbose=True, allow_delegation=False)
 
 
