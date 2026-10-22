@@ -7,12 +7,21 @@ LABEL = 'Desarrollador frontend'
 SPEC_FILE = 'frontend_spec.md'
 EXTRACT_CODE = True
 
-INSTRUCTIONS = """Implementa el recorrido del usuario según el contrato de API aprobado.
-Define campos, validaciones, acciones y mensajes.
-Cubre estados de carga, vacío, éxito y error, y evita envíos duplicados.
-Conserva etiquetas accesibles, navegación por teclado y foco visible.
-Incluye cómo comprobar el recorrido y sus errores.
-Entrega frontend_spec.md y código Angular con el formato de extracción que ya exige build_task."""
+INSTRUCTIONS = """Implementa el frontend Angular del feature según los criterios
+de aceptación y el contrato de API aprobado.
+
+Define pantallas, campos, validaciones, acciones y mensajes.
+Usa servicios tipados; no inventes endpoints ni reglas de negocio.
+Gestiona carga, vacío, éxito y errores; bloquea envíos duplicados.
+No reintentes operaciones financieras automáticamente ni muestres éxito sin confirmación.
+Incluye etiquetas accesibles, navegación por teclado y foco visible.
+No expongas credenciales ni datos sensibles en código o logs.
+Propón pruebas para los criterios de aceptación, errores de API y doble envío;
+distingue pruebas propuestas de ejecutadas.
+
+Entrega frontend_spec.md y código Angular siguiendo la estructura existente.
+Respeta los bloques Markdown y comentarios de nombre de archivo exigidos por build_task.
+Declara cualquier información faltante que impida implementar el recorrido."""
 agent = Agent(role='Desarrollador frontend', goal="Analizar el feature brief recibido y producir una especificación técnica completa: arquitectura, componentes, contrato de API y  criterios de aceptación medibles, alineados a los estándares de seguridad y calidad del BCP.",
               backstory="Eres un desarrollador frontend senior con 10 años de experiencia en banca digital peruana. Conoces PCI-DSS  y las normas de la SBS.", llm=llm,
               verbose=True, allow_delegation=False)
