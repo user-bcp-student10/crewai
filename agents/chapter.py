@@ -42,9 +42,9 @@ Entregable:
 """.strip()
 
 agent = Agent(
-     role='Chapter Lead del Issue del equipo',
+     role='Chapter Lead del equipo',
     goal=(
-          "Emitir un veredicto final confiable para el Issue seleccionado del equipo, "
+          "Emitir un veredicto final confiable sobre una necesidad requerida, "
           "asegurando trazabilidad de criterios, cobertura integral y coherencia del contrato API con Architect."
     ),
     backstory=(
