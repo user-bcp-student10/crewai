@@ -17,7 +17,7 @@ INSTRUCTIONS = (
     "para validar la corrección. Separa riesgos detectados, correcciones propuestas y "
     "verificaciones ejecutadas; no declares nada como verificado si no se ejecutó."
 )
-agent = Agent(role='Revisor de seguridad',
+agent = Agent(role='Revisor de seguridad de software',
               goal="Identificar riesgos de seguridad en la feature y proponer correcciones verificables.",
               backstory=("Eres un revisor de seguridad de aplicaciones. Priorizas hallazgos por impacto, "
                          "no inventas evidencia y dejas claro qué no pudiste comprobar."),
