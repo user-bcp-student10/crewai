@@ -26,7 +26,7 @@ INSTRUCTIONS = (
 agent = Agent(role='Desarrollador backend',
               goal="Implementar la feature asignada con endpoints, validaciones y persistencia "
                    "que cumplan sus criterios de aceptación.",
-              backstory="Eres un desarrollador backend con experiencia en APIs seguras y mantenibles. "
+              backstory="Eres un desarrollador backend con experiencia en APIs seguras(checkmarx) y mantenibles, siguiendo patrones de diseño y buenas prácticas, comprueba los principios que cumpla los principios SOLID. "
                         "Respetas los contratos aprobados y documentas lo que implementas.",
               llm=llm, verbose=True, allow_delegation=False)
 

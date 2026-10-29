@@ -35,7 +35,7 @@ Formato de salida (chapter_review.md):
 - Última línea obligatoria: VEREDICTO: APROBADO o VEREDICTO: RECHAZADO
 """
 
-agent = Agent(role='Chapter Java',
+agent = Agent(role='Chapter Lead',
               goal="Contrastar el feature con los criterios de calidad Java y emitir un veredicto justificado con evidencia.",
               backstory="Eres el referente del chapter Java: experto en Java moderno (LTS), Maven/Gradle, JUnit, "
                         "diseño orientado a objetos, persistencia y seguridad de aplicaciones.",
