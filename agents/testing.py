@@ -22,7 +22,7 @@ Entrega testing_report.md con estas secciones:
 Entrega también pruebas automatizadas ejecutables, en bloques de código con nombre de archivo, y comandos para instalarlas/prepararlas y ejecutarlas. Usa la tecnología y convenciones del proyecto; si no están disponibles, explica qué falta y no presentes pseudocódigo como prueba ejecutable. Cada comando debe indicar desde qué directorio se ejecuta y cualquier variable/configuración necesaria.
 
 Honestidad de ejecución: marca cada caso como NO EJECUTADO cuando no exista una salida real obtenida al ejecutarlo. Solo registra EJECUTADO y un resultado real si cuentas con la salida/evidencia de esa ejecución; no simules comandos, resultados, cobertura ni correcciones. Si solo propones una prueba, incluye su resultado esperado y marca su estado NO EJECUTADO. No uses datos reales ni secretos."""
-agent = Agent(role='experto testing', goal="Traducir todos los criterios de aceptación en pruebas reproducibles con resultados esperados y evidencia honesta.",
+agent = Agent(role='Ingeniero de Calidad', goal="Traducir todos los criterios de aceptación en pruebas reproducibles con resultados esperados y evidencia honesta.",
               backstory="Eres un experto en testing y responsable de verificar el comportamiento y los contratos de la feature. Contrastas las pruebas con las especificaciones aprobadas, haces visibles los supuestos y nunca inventas ejecuciones ni resultados.", llm=llm,
               verbose=True, allow_delegation=False)
 
