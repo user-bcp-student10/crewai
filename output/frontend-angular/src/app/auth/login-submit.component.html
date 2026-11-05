@@ -1,0 +1,39 @@
+<!-- login-submit.component.html -->
+
+<section aria-labelledby="login-heading">
+  <h1 id="login-heading">Iniciar sesión</h1>
+
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <!--
+      El host debe proyectar aquí los controles del contrato aprobado,
+      con etiquetas asociadas y mensajes de validación por campo.
+    -->
+    <ng-content select="[loginFields]"></ng-content>
+
+    <div
+      #feedback
+      class="feedback"
+      role="alert"
+      aria-live="assertive"
+      tabindex="-1"
+    >
+      {{ feedbackMessage }}
+    </div>
+
+    <p *ngIf="loading" role="status" aria-live="polite">
+      Enviando solicitud…
+    </p>
+
+    <p *ngIf="statusMessage && !loading" role="status" aria-live="polite">
+      {{ statusMessage }}
+    </p>
+
+    <p *ngIf="!loading && !feedbackMessage && !statusMessage">
+      Completa el formulario para continuar.
+    </p>
+
+    <button type="submit" [disabled]="loading">
+      {{ loading ? 'Enviando…' : 'Iniciar sesión' }}
+    </button>
+  </form>
+</section>

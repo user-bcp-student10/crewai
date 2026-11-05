@@ -1,0 +1,14 @@
+/* login-submit.component.css */
+
+:host {
+  display: block;
+}
+
+.feedback:empty {
+  display: none;
+}
+
+button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
